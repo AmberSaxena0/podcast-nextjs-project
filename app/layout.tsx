@@ -11,10 +11,13 @@ export const metadata: Metadata = {
   icons: { icon: "/icons/logo.svg" },
 };
 
+console.log("Hello")
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+
 }>) {
   return (
     <html lang="en">
