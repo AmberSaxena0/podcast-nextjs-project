@@ -71,7 +71,7 @@ const CreatePodcast = () => {
   }
 
   return (
-    <section className="mt-10 flex flex-col">
+    <section className="mt-10 flex flex-col w-full">
       <h1 className="text-20 font-bold text-white-1">CreatePodcast </h1>
       <Form {...form}>
         <form
@@ -84,11 +84,11 @@ const CreatePodcast = () => {
             render={({ field }) => (
               <FormItem className="flex flex-col gap-2.5 ">
                 <FormLabel className="text-16 font-bold text-white-1">
-                  Username
+                  Podcast Title
                 </FormLabel>
                 <FormControl>
                   <Input
-                    className="input-class focus-visible:ring-orange-1"
+                    className="input-class focus-visible:ring-offset-orange-1"
                     placeholder="VocalVibes"
                     {...field}
                   />
@@ -105,7 +105,7 @@ const CreatePodcast = () => {
             <Select onValueChange={(val) => setVoiceType(val)}>
               <SelectTrigger
                 className={cn(
-                  "text-16 w-full border-none bg-black-1 text-gray-1"
+                  "text-16 w-full border-none bg-black-1 text-gray-1 focus-visible:ring-offset-orange-1"
                 )}
               >
                 <SelectValue
@@ -141,7 +141,7 @@ const CreatePodcast = () => {
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    className="input-class focus-visible:ring-orange-1"
+                    className="input-class focus-visible:ring-offset-orange-1"
                     placeholder="Write a short podcast description"
                     {...field}
                   />
@@ -169,7 +169,7 @@ const CreatePodcast = () => {
                 title="Submit"
                 className="text-16 w-full py-6 font-extrabold text-white-1 bg-orange-1 transition-all duration-100 hover:bg-black-1"
               >
-                {!isSubmitting ? (
+                {isSubmitting ? (
                   <>
                     <Loader size={20} className="animate-spin mr-2" />
                     Submitting...
